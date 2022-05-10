@@ -13,6 +13,7 @@ const mongoose = require('mongoose');
 
 //mongoose.Promise = global.Promise;
 
+//Connecting to the database
 mongoose.connect(dbConfig.url, {
     useNewUrlParser: true
 }).then(() => {
@@ -39,7 +40,7 @@ app.post('/addStudent',(req,res)=>{
     })
 })
 
-//count of documents
+//Get table of all student's data
 app.get('/getStudents',(req,res)=>{
 
     //count the documents
@@ -84,6 +85,7 @@ app.post('/deleteStudents/:id',(req,res)=>{
     })
 }) 
 
-app.listen(3000, () => {
+//listening on port 3000
+app.listen(port, () => {
     console.log("Server is listening on port 3000");
 });
