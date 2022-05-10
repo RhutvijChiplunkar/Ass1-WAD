@@ -1,0 +1,40 @@
+<style>
+    th, td {
+  padding: 15px;
+}
+</style>
+
+
+    <hr>
+    
+    <% if(student!=null) { %>
+    <table border="2px">
+    <tr>
+        <th>Name</th>
+        <th>Roll_no </th>
+        <th>WAD_marks </th>
+        <th>CC_marks </th>
+        <th>DSBDA_marks </th>
+        <th>CNS_marks </th>
+        <th>AI_marks </th>
+    </tr>
+    <% student.forEach(function(item){ %>
+    <tr> 
+        <td><%= item.Name%></td>
+        <td><%= item.Roll_no%></td>
+        <td><%= item.WAD_marks%></td>
+        <td><%= item.CC_marks%></td>
+        <td><%= item.DSBDA_marks%></td>
+        <td><%= item.CNS_marks%></td>
+        <td><%= item.AI_marks%></td>
+        <td>
+            <form method="post" action="/deleteStudents/<%= item._id %>">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+        
+    </td>
+    </tr>
+    <% }) %>
+    </table>
+    <% } %>
